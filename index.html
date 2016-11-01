@@ -4,10 +4,21 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>title</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+    <div class="container"></div>
 
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+      var container = document.querySelector(".container")
+      var forms = "<form action='/a'><input type='text' value='a'></form><form action='/b'><input type='text' value='b'></form><form action='/c'><input type='text' value='c'></form>"
+
+      function prepareNode(html) {
+        var template = document.createElement("template")
+        template.innerHTML = html
+        return document.importNode(template.content, true)
+      }
+
+      container.appendChild(prepareNode(forms))
+    </script>
   </body>
 </html>

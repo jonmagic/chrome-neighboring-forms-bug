@@ -22,3 +22,7 @@ container.appendChild(prepareNode(forms))
 ### But Chrome nests the forms
 
 ![chrome](chrome.png)
+
+### The solution
+
+I figured out that nesting each `form` in a `div` will prevent the undesired behavior.
